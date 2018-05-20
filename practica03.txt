@@ -1,0 +1,127 @@
+Nombre: María Cristina López-Andújar Moreno
+login: mcristin
+
+
+================================
+Práctica 3.2. Funciones básicas
+================================
+
+Ejemplo de js incrustado:
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hola, mundo</title>
+</head>
+<body>
+  <script>
+    document.write("Hola, mundo");
+  </script>
+</body>
+
+Ejemplo de fichero externo js:
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hola, mundo</title>
+    <script src="js/holamundo.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+
+console.log("Hola, mundo");
+
+Para ejecutar: node holamundo.js
+Comentarios igual que java
+
+
+
+========================
+Práctica 3.3. Funciones.
+========================
+
+El 'use sctric' te obliga a:
+Es necesario declarar expl´ıcitamente todas las variables
+Las funciones se deben declarar en top level o como mucho
+con un nivel de anidamiento (una funci´on dentro de otra
+funci´on). Pero no se admiten niveles m´as profundos de
+anidamiento.
+No se puede repetir el nombre un par´ametro en la misma
+funci´on
+El intento de modificar propiedades inmutables genera una
+excepci´on
+No se permite el uso de la sentencia with
+Un numero que comienza por 0 no se considera que es un ´
+numero octal
+
+
+=======================================
+Práctica 3.4. Validación de contraseña
+=======================================
+
+Como utilizar variables del js y pasarlas al html:
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Validación de formulario</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <form action="/action_page.html">
+    <label for="usuario">Usuario</label>
+    <input type="text" name="usuario" id="usuario">
+    <br>
+    <label for="contrasenia">Contraseña</label>
+    <input type="password" name="contrasenia" id="contrasenia">
+    <div id="validacion"></div>
+    <br>
+    <input type="submit">
+  </form>
+  <script>
+    $(document).ready(function() {
+      $("#contrasenia").on("change keyup paste mouseup", function() {
+        if ( $(this).val().length > 5) {
+          $("#validacion").text("Contraseña aceptable");
+        } else {
+          $("#validacion").text("Contraseña muy corta");
+        };
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+Nota:
+Ejemplo de funciones
+'use strict'
+function suma(x,y){
+    return(x+y);
+}
+
+let a,b;
+a=2;
+b=2;
+console.log(suma(a,b));
+
+a=0.15;
+b=0.50;
+console.log(suma(a,b));
+
+a=-1;
+b=0;
+console.log(suma(a,b));
+
+a=undefined;
+b=0;
+console.log(suma(a,b));
+
+(etc)

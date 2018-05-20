@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <title>Práctica 4.6. Calculadora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/calculadora.js"></script>
+  <style>
+    .in {
+      border: 10px solid;
+      border-width: thin;
+      border-color: #9D9595;
+      text-align: right;
+      padding: 10px;
+      background-color: white;
+      font-weight:bold;
+      padding: 15px 32px;
+
+    }
+
+    .boton {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight:bold;
+    }
+
+    .botonIgual {
+      background-color: #555555;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight:bold;
+
+    }
+    .botonDel {
+      background-color: #f44336;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight:bold;
+    }
+
+    .botonOper {
+      background-color: #008CBA;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight:bold;
+
+    }
+
+    body {
+      background-color: #E3CEF6;
+
+    }
+
+    #titulo {
+      font-weight:bold;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1 id="titulo">CALCULADORA</h1>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-3 col-lg-offset-4">
+        <p id="v_out" class="in">0</p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton">7</button>
+          <button type="button" class="boton">8</button>
+          <button type="button" class="boton">9</button>
+          <button type="button" class="botonOper">/</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton">4</button>
+          <button type="button" class="boton">5</button>
+          <button type="button" class="boton">6</button>
+          <button type="button" class="botonOper">*</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton">1</button>
+          <button type="button" class="boton">2</button>
+          <button type="button" class="boton">3</button>
+          <button type="button" class="botonOper">-</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="botonDel">c</button>
+          <button type="button" class="boton">0</button>
+          <button type="button" class="botonIgual">=</button>
+          <button type="button" class="botonOper">+</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    let calc = {
+      operando: 0,
+      num: 0,
+      operador: 0,
+    };
+    $(document).ready(function() {
+      $(".boton").click(function() {
+        let v_text=$(this).text();
+        v_out=getKey(v_text,calc);
+        $("#v_out").text(v_out);
+      });
+      $(".botonDel").click(function() {
+        let v_text=$(this).text();
+        v_out=getKey(v_text,calc);
+        $("#v_out").text(v_out);
+      });
+      $(".botonOper").click(function() {
+        let v_text=$(this).text();
+        v_out=getKey(v_text,calc);
+        $("#v_out").text(v_out);
+      });
+      $(".botonIgual").click(function() {
+        let v_text=$(this).text();
+        v_out=getKey(v_text,calc);
+        $("#v_out").text(v_out);
+      });
+    });
+  </script>
+</body>
+</html>

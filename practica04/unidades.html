@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Práctica 4.2. Escritura y lectura de datos HTML-jQuery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/js02.js"></script>
+  <style>
+  body {
+    background-color: #BDBDBD;
+  }
+
+  #titulo {
+    text-align: center;
+    font-size:300%;
+  }
+
+  #img {
+    display:block;
+    margin:auto;
+  }
+
+  .boton {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    margin:auto;
+
+  }
+
+  #v_in, #v_out {
+    font-size:300%;
+  }
+
+  </style>
+</head>
+
+<body>
+  <h1 id="titulo">Converter</h1>
+  <img id="img" src="images/velocity.jpg" border="1" alt="imagen" width="300" height="200">
+  <div id="v_in">10</div>
+  <div id="v_out"></div>
+  <br>
+  <div>
+    <button class="boton">m/s</button>
+    <button class="boton">km/h</button>
+    <button class="boton">mph</button>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $(".boton").click(function() {
+        let v_text=$("#v_in").text();
+        let unidades=$(this).text();
+        v_out=convert(v_text, unidades);
+        $("#v_out").text(v_out);
+      });
+    });
+  </script>
+</body>
+</html>

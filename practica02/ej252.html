@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title> ej252 </title>
+  <style>
+    #destacado { color: red; }
+
+    div#principal {
+      color: green;
+    }
+    div p {
+      color: black;
+    }
+    div>p {
+      font-size: 200%;
+    }
+    p[class~="test_dos"], div[class~="test_cuatro"] {
+      font-size: x-large;
+      font-size: 600%;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Párrafo 1</p>
+  <div id="principal">
+    <p>Párrafo 2</p>
+  </div>
+  <div>
+    <section>
+      <h2>Una sección</h2>
+      <p>Párrafo 3</p>
+    </section>
+    <p id='destacado'>Párrafo 4</p>
+    <p>Párrafo 5</p>
+  </div>
+
+  <div class="test">
+      6.Parrafo
+      <div class="test_dos">
+        7. Parrafo
+      </div>
+      <p class="test_tres">
+        8. El super párrafo
+      </p>
+      <div class="test_cuatro">
+        9. La super clase
+      </div>
+    </div>
+</body>
+
+</html>

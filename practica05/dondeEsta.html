@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Práctica 5.6. Geolocalización y mapas</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+  <style>
+    #mapa {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="where" >Where is my car?</button>
+  <button id="delete" hidden="true">Delete position</button>
+
+<div id="mapa"></div>
+<div id="viewer"></div>
+
+<script>
+  'use strict'
+  $(document).ready(function() {
+    var latitud;
+    var longitud;
+    var mi_mapa;
+
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    $("#delete").click(function() {
+      for (let claves in localStorage) {
+        localStorage.removeItem(claves);
+      }
+    });
+
+    $("#where").click(function() {
+      let coordenadas = [latitud, longitud];
+      localStorage.setItem('coche', coordenadas);
+      let marcador_coche = L.marker(coords).addTo(mi_mapa);
+      $("#borrar").show();
+    });
+
+    function success(pos) {
+      let x = pos.coords;
+
+      latitud = x.latitude;
+      longitud = x.longitude;
+
+      let zoom = 16;
+
+      mi_mapa = L.map('mapa').setView([latitud, longitud], zoom);
+
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+      }).addTo(mi_mapa);
+
+      let coordenadas = [latitud, longitud];
+      let mi_marcador = L.marker(coordenadas).addTo(mi_mapa);
+      mi_marcador.bindPopup("You are here!").openPopup();
+
+      let coche = localStorage.getItem('coche');
+      if (coche) {
+        let coordenadas = car.split(",");
+        let marcador_coche = L.marker(coordenadas).addTo(mi_mapa);
+        $(document).ready(function(){
+            $("borrar").show();
+        });
+      }
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  });
+  </script>
+
+</body>
+
+</html>

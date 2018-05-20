@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title> ej251 </title>
+  <style>
+    .test{
+      background-color: blue;
+    }
+    p span{
+      font-style: italic;
+    }
+
+    div p {
+      color: black;
+    }
+    div[class] {
+      border: 1px solid green;
+    }
+
+    div>p {
+      font-size: 200%;
+    }
+
+    p+p {
+      background-color: yellow;
+    }
+    p[class~="test_dos"], div[class~="test_cuatro"] {
+      font-size: x-large;
+      font-size: 600%;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Párrafo 1</p>
+  <div>
+    <p>Párrafo 2</p>
+  </div>
+  <div>
+    <section>
+      <h2>Una sección</h2>
+      <p>Párrafo 3</p>
+    </section>
+    <p>Párrafo 4</p>
+    <p>Párrafo 5</p>
+  </div>
+
+  <div class="test">
+      6.Parrafo
+      <div class="test_dos">
+        7. Parrafo
+      </div>
+      <p class="test_tres">
+        8. El super párrafo
+        <p><span> --> Texto descendente </span></p>
+      </p>
+      <div class="test_cuatro">
+        9. La super clase
+      </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <title>Práctica 5.1. Web Storage. Geolocalización</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="sesion.js"></script>
+  <style>
+    .borrar {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      font-size: 16px;
+    }
+
+    #localizacion {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif; 
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="elementos">
+    <div id="localizacion"> </div>
+  </div>
+  <button id="borrar" class="borrar">Eliminar elemento</button>
+
+
+  <script>
+    $(document).ready(function() {
+      let mensaje = localiza();
+      $("#localizacion").text(mensaje);
+      $("#borrar").click(function(event) {
+        $(".elementos").remove();
+        eliminaStorage();
+      });
+
+    });
+  </script>
+</body>
+
+</html>

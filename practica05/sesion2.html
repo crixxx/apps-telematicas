@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Práctica 5.3. JSON y LocalStorage</title>
+  <meta charset="utf-8">
+  <script src="sesion2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    .borrar {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      font-size: 16px;
+    }
+
+    #localizacion {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="elementos">
+    <div id="localizacion"> </div>
+  </div>
+  <button id="borrar" class="borrar">Eliminar elemento</button>
+
+  <script>
+    $(document).ready(function() {
+      let options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      };
+      function success(pos) {
+        var x = pos.coords;
+        var precision = x.accuracy.toFixed(3)
+        var latitud = x.latitude.toFixed(3)
+        var longitud = x.longitude.toFixed(3)
+
+        let mensaje = getLocalizacion(latitud, longitud, precision);
+        $("#localizacion").text(mensaje);
+      }
+      $("#borrar").click(function(event) {
+        $(".elementos").remove();
+        eliminaStorage();
+      });
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    });
+  </script>
+</body>
+
+</html>

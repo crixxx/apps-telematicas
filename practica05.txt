@@ -1,0 +1,146 @@
+Nombre: María Cristina López-Andújar Moreno
+login: mcristin
+
+===========================================
+Práctica 5.1. Web Storage. Geolocalización
+===========================================
+
+Para esta practica he reutilizado el codigo de uno de los ejemplos de localStorage
+
+'use strict'
+let nombreUsuario = localStorage.getItem('nombre');
+let mensaje;
+if (!nombreUsuario) {
+  let input = prompt("¿Cómo te llamas?");
+  localStorage.setItem('nombreUsuario', input);
+  mensaje = "Hola " + nombreUsuario + ". Esta es tu primera visita. Tus coordenadas son:";
+
+} else {
+  mensaje = "Hola " + nombreUsuario + ". Tu última visita fue con fecha";
+}
+
+for (let clave in localStorage) {
+  let valor = localStorage[clave];
+  console.log(clave + ": " + valor)
+}
+
+Y le he añadido
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+$("#borrar").click(function(event) {
+  $(".elementos").remove();
+});
+
+para que funcione como especifica
+
+===================
+Práctica 5.2. JSON
+===================
+He creado el objeto persona con 8 atributos
+persona = { "nombre":"Cristina", "apellido":"López", "edad":27, "ciudad":null, "carrera":"Telematica",
+"notaMedia":6, "asignaturas":["AT","Android","SSDD"], "termina":false };
+
+
+==================================
+Práctica 5.3. JSON y LocalStorage
+=================================
+
+==============================================
+Práctica 5.4. Consulta REST a weatherunlocked
+==============================================
+Datos de weatherunlocked:
+let app_id = "416a625b"
+let app_key = "27bcccd6ef3404d9bd05c4ba92b4af5e"
+
+Utilizar REST en un js:
+request.get() le pasamos:
+Una cadena con la URI del recurso. Incluye:
+  La direccin base http://api.weatherunlocked.com
+  El recurso, que puede ser api/current/ o api/forecast/
+  Un par´ametro con los Application ID, Application Keys
+La funcion que manejara la respuesta. Con los par´ametros
+  error:  Valdra null si la consulta tuvo ´exito
+  response:  Si hubo respuesta, este objeto contendr´a todos los detalles.
+  Muy bajo nivel
+  body :  Cuerpo de la respuesta, si la hubo
+
+Funciones de utilidad:
+Para que la consulta Ajax se repita peri´odicamente,
+Recibe
+Como primer argumento, una funci´on
+Como segundo argumento, un intervalo de tiempo en
+milisegundos
+Como resultado, evalua la funci ´ ´on peri´odicamente, con el intervalo
+especificado. El siguente ejemplo se ejecutar´ıa cada 60 segundos
+
+setInterval(function() {
+      miTexto=actualizaTexto();
+      $("#p01").text(miTexto);
+    },
+    60000
+);
+
+$(document).ready(function() {
+  let urlServicio = ’http://data.fixer.io/latest’;
+  peticion = $.ajax({
+    url: urlServicio,
+    data: {
+      access_key: "xxxxxx",
+      symbols: "USD, GBP"
+    }
+  })
+  peticion.done(manejaRespuesta);
+  peticion.fail(manejaError);
+
+  function manejaRespuesta(json) {
+    $("#div01").text(JSON.stringify(json));
+  };
+
+  function manejaError(jqXHR) {
+    $("#div01").text("Error: " + jqXHR.status);
+  };
+});
+
+======================
+Práctica 5.5. YouTube
+======================
+He añadido un video en la pestaña main, otro en la pestaña about y un mapa en la pestaña contact.
+
+======================================
+Práctica 5.6. Geolocalización y mapas
+======================================
+posicion.html es un mapa con la posicion actual:
+He utilizado la funcion   navigator.geolocation.getCurrentPosition(success, error, options); Como
+en la primera parte de la practica 5 (sesion.html)
+
+$(document).ready(function() {
+  let latitud;
+  let longitud;
+  let precision;
+
+  let options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+
+  function success(pos) {
+    let x = pos.coords;
+    let mi_mapa;
+
+    latitud = x.latitude;
+    longitud = x.longitude;
+    precision = x.accuracy;
+
+  }
+
+  function error(err) {
+    console.warn('ERROR(${err.code}): ${err.message}');
+  };
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
+
+==============================
+Práctica 5.7. ¿Dónde está mi coche?
+==============================

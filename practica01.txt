@@ -1,0 +1,106 @@
+Nombre: María Cristina López-Andújar Moreno
+login: mcristin
+
+=============================
+Práctica 1.1. Elementos HTML
+=============================
+
+En este ejercicio de ejemplo he utilizado:
+Comentario
+p, br, em, pre
+h1, h2 (y algún otro h si quieres)
+Enlaces a otra página
+Enlace a un apartado de la página actual
+div, span
+ol, ul, dl
+img
+img dentro de un enlace: en este caso he utilizado un gif en vez de una imagen
+
+
+==========================
+Práctica 1.2. Formularios
+==========================
+He hecho la simulación de un alta y la operacion una transaccion bancaria.
+No presenta ningun error en W3C
+
+===================
+1.3. W3C Validator
+===================
+
+https://www.google.es
+
+Warning: Using windows-1252 instead of the declared encoding iso-8859-1.
+  - Este warnig es sobre el formato en el que se está haciendo la pagina, está utilizando windows-1252 cuando
+  ha declarado utiliza iso-8859-1
+Error: Legacy encoding windows-1252 used. Documents must use UTF-8.
+  - Igual que el warning anterior
+Error: Internal encoding declaration utf-8 disagrees with the actual encoding of the document (windows-1252).
+  - No es compatible utf con el formato windows-1253 que es en lo que está escrito
+Error: CSS: display: inline-box is not a display value.
+  - Esto es porque se esta declarando como display el valor inline-box que no es una variable display
+Error: The bgcolor attribute on the body element is obsolete. Use CSS instead.
+  - bgcolor está obsoleto, te recomienda utilizar css
+Error: Element nobr not allowed as child of element div in this context. (Suppressing further errors from this subtree.)
+  - nobr se ha utilizado como hijo del div, pero no está permitido
+Error: Attribute width not allowed on element div at this point.
+  - width se ha utilizado dentro del div pero no está permitido
+Error: Element nobr not allowed as child of element div in this context. (Suppressing further errors from this subtree.)
+  - Se vuelve a utilizar el elemento nobr dentro de un div que no está permitido
+Error: The center element is obsolete. Use CSS instead.
+  - El elemento center está obsoleto te recomienda utilizar css
+Error: The clear attribute on the br element is obsolete. Use CSS instead.
+  - El atributo clear dentro del br está obsoleto, te recomienda utilizar css
+Error: The cellpadding attribute on the table element is obsolete. Use CSS instead.
+  - El atributo cellpadding está obsoleto para las tablas, te recomienda css
+
+http://www.accenture.com
+
+Error: Bad value banner for attribute role on element a.
+  - Para el atributo role no es valido el valor banner en el elemento a
+Error: Element hr not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+  - hr no está permitido en listas ordenadas
+Error: Element hr not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+  - hr no está permitido en listas ordenadas
+Error: Bad value for attribute id on element div: An ID must not be the empty string.
+  -<div id="" class="nav-submenu-label"> el id está vacio
+Error: Bad value /Content/images/United States.jpg for attribute src on element img: Illegal character in path segment: space is not allowed.
+  -<img src="/Content/images/United States.jpg" alt="United States" class="country-flag pull-left"/> la imagen de United States.jpg la han puesto con el
+  espacio y deberia estar sin el espacio
+Error: Element img is missing required attribute src.
+  - Se supone que es una imagen, pero no hay imagen
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+  - Le falta el atributo alt porque es una imagen
+Warning: Empty heading.
+  - <h3 class="displayInlineBlock color-white"></h3>↩ es un heading pero no tiene texto
+Error: CSS: padding: Parse Error.
+  - esta el padding vacio decss
+Error: Element source is missing required attribute src.
+  -           <source type="video/mp4">↩     le falta el video, solo han puesto el tipo
+
+
+https://www.wikipedia.org/
+
+Error: Bogus comment. (8)
+  - Este error sale cuando hay un comentario mal escrito, en este ejemplo:<![if gt IE 7]>< falta <!-- ... -->
+Error: Bogus comment.
+  - Igual que el anterior
+Error: Element div not allowed as child of element h1 in this context. (Suppressing further errors from this subtree.)
+  - Se esta utilizando el elemento div como hijo de un h1 que es solo una cabecera, no es posible
+Warning: The bdi element is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+  - Te avisa que bdi no esta soportado por todos los navegadores, lo suyo seria utilizar algo que lo soporten todos
+  (Como este warning hay bastantes en esta pagina)
+Error: Attribute results not allowed on element input at this point.
+  - Se esta utilizando result para un input y no se puede
+Error: Bad value kk-Cyrl for attribute lang on element span: Language tag should omit the default script for the language.
+  - lang="kk-Cyrl" no es un idioma valido, lang se utiliza para definir el idioma
+Error: Bad value roa-rup for attribute lang on element a: Bad extlang subtag rup.
+  - <a href="//roa-rup.wikipedia.org/" lang="roa-rup"> igual que el anterior
+Error: Bad value fiu-vro for attribute lang on element a: Bad extlang subtag vro.
+  - Igual que el anterior
+Error: The list attribute of the input element must refer to a datalist element.
+  - Le falta el datalist al atributo list, esta incompleto
+
+========
+1.4. CV
+========
+Mi CV en html no muestra ningún error en W3C Validator

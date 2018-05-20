@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <title>Práctica 4.5. Validación de formulario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/js03.js"></script>
+</head>
+<body>
+    <form action="validacion.html">
+      <br>
+      <label for="pass">Password</label>
+      <input type="password" name="pass" id="pass">
+      <div id="validacion"></div>
+      <br>
+    </form>
+    <script>
+      $(document).ready(function() {
+        $("#pass").on("change keyup paste mouseup", function() {
+          if (check($(this).val())) {
+            $("#validacion").text("Secure!");
+          } else {
+            $("#validacion").text("The Password is too weak!");
+          };
+        });
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Wallapop!</title>
+</head>
+
+<body>
+  <br><br>
+  <form>
+    <fieldset>
+      <legend>
+        Datos del usuario
+      </legend>
+      <br>
+      <label for="usuario">Tipo usuario</label>
+      <select name="usuario" id="usuario">
+          <option value="Nada">---</option>
+          <option value="Particular">Particular</option>
+          <option value="Empresa">Empresa</option>
+        </select>
+      <br><br>
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre">
+      <label for="numero">DNI</label>
+      <input type="text" name="numero" id="numero">
+      <br><br>
+      <label for="direccion">Dirección</label>
+      <input type="text" name="direccion" id="direccion">
+      <br><br>
+      <label for="telefono">Teléfono</label>
+      <input type="text" name="telefono" id="telefono">
+      <br><br>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+      <br><br>
+    </fieldset>
+  </form>
+  <br><br>
+  <form>
+    <fieldset>
+      <legend>
+        Compra y vende al mejor precio
+      </legend>
+      <br> Quiero:
+      <input type="radio" name="os" value="Comprar">comprar
+      <input type="radio" name="os" value="Vender">vender
+      <br><br>
+      <label for="tipoBusqueda">Tipo de objeto:</label>
+      <select name="tipoBusqueda" id="tipoBusqueda">
+            <option value="Nada">---</option>
+            <option value="Informatica">Electrodoméstico Grande</option>
+            <option value="electrodomesticoP">Electrodoméstico Pequeño</option>
+            <option value="electrodomesticoG">Electrodoméstico Grande</option>
+            <option value="libros">Libros</option>
+            <option value="coches">Coches</option>
+            <option value="ropa">Ropa</option>
+            <option value="bicis">Bicis</option>
+            <option value="muebles">Muebles</option>
+            <option value="juegos">Juegos</option>
+        </select>
+      <br>
+      <br>
+      <label for="precio">Precio Máximo</label>
+      <input type="text" name="max" id="max">
+      <label for="precio">Precio Minimo</label>
+      <input type="text" name="min" id="min">
+      <br><br>
+      <legend>
+        Descripcion del articulo:
+      </legend>
+      <br>
+      <textarea name="mensaje" rows="10" cols="80">Escriba información adicional sobre el articulo a vender o palabras clave para la búsqueda...</textarea>
+      <br>
+      <input type="checkbox" name="terminos" value="si">Confirmo que estoy de acuerdo con los terminos y condiciones de Wallapop!<br>
+      <br>
+    </fieldset>
+  </form>
+
+  <br><br>
+
+  <form>
+    <fieldset>
+      <legend>
+        Datos de acceso a la aplicacion
+      </legend>
+      <br>
+      <label for="login">Login</label>
+      <input type="text" name="login" id="login">
+      <br>
+      <label for="email">Contraseña</label>
+      <input type="password" name="password" id="password">
+  </form>
+  </fieldset>
+  </form>
+
+</body>
+
+</html>

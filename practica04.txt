@@ -1,0 +1,63 @@
+
+Nombre: María Cristina López-Andújar Moreno
+login: mcristin
+==================================
+Práctica 4.1. Mostrar y ocultar controles
+==================================
+
+En esta práctica he modificado la practica del CV para mostrar y ocultar información de mi CV
+como la foto, experiencia y conocimientos
+
+=======================================================
+Práctica 4.2. Escritura y lectura de datos HTML-jQuery
+======================================================
+
+He metido elementos css para que quede mejor y el valor por defecto es 10
+
+
+======================
+Práctica 4.4. Tooltip
+======================
+
+Lo he añadido a la practica de cambia boton (la anterior).
+IMPORTANTE, la sentencia del Tooltip se pone siempre debajo porque si no,
+no funciona:
+
+<body>
+    <button id="boton" data-toggle="tooltip" title="Esto es un tooltip" data-placement="bottom" >Ver foto</button>
+    <div id="marco_foto" class="oculto">
+    <img id="fotoURJC" src="images/urjc.png" alt="Logo URJC">
+  </div>
+  <script>
+    $(document).ready(function() {
+      var estaOculto = true;
+      $("#boton").click(function() {
+        $("#marco_foto").toggleClass("oculto")
+        if (estaOculto === true){
+          $("#boton").text("Ocultar foto");
+          estaOculto = !estaOculto;
+        }else {
+          $("#boton").text("Ver foto");
+          estaOculto = !estaOculto;
+        }
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+===========================================
+Práctica 4.9. Calculadora basada en clases
+===========================================
+La calculadora la hice desde un principio asi, cree la clase calculadora y le añadi los atributos
+de operador, operando y numero
+
+let calc = {
+      operando: 0,
+      num: 0,
+      operador: 0,
+    };
+
+Para poder crear el objeto de calculadora y aplicar los metodos sobre ella.

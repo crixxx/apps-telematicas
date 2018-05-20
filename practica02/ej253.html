@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title> ej253 </title>
+  <style>
+    #destacado {
+      color: red;
+    }
+
+    #destacado_dos {
+      background-color: inherit;
+    }
+
+    .clase1.clase2 {
+      color: green;
+    }
+
+    div + p {
+     text-decoration: underline;
+    }
+
+
+    h2 + h3 {
+      color: white;
+      background-color: blue;
+    }
+
+    p>span {
+      background-color: black;
+      color: white;
+    }
+
+    div p {
+      color: black;
+    }
+
+    div>p {
+      font-size: 200%;
+    }
+
+    p[class~="test_dos"],
+    div[class~="test_cuatro"] {
+      font-size: x-large;
+      font-size: 600%;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Párrafo 1</p>
+  <div>
+    <section>
+      <h2>Una sección</h2>
+      <p>Párrafo 3</p>
+    </section>
+    <p id='destacado'>Párrafo 4</p>
+    <p>Párrafo 5</p>
+  </div>
+
+  <div class="test">
+    6.Parrafo
+    <div class="test_dos">
+      7. Parrafo
+    </div>
+  </div>
+
+  <div class="clase1 clase2">
+    8. La clase concatenada
+  </div>
+  <p>
+    <span> 9. La clase hijo directo</span>
+  </p>
+
+  <h2>La clase...</h2>
+  <h3>Adyacente</h3>
+
+
+</body>
+
+</html>

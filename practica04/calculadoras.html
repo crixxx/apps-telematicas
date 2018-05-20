@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8">
+  <title>Práctica 4.7. Calculadoras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/calculadora.js"></script>
+  <style>
+    .in {
+      border: 10px solid;
+      border-width: thin;
+      border-color: #9D9595;
+      text-align: right;
+      padding: 12px;
+      background-color: white;
+      font-weight:bold;
+      padding: 10px 24px;
+
+    }
+
+    .boton {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+    }
+
+    .botonIgual {
+      background-color: #555555;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+
+    }
+    .botonDel {
+      background-color: #f44336;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+    }
+
+    .botonOper {
+      background-color: #008CBA;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+
+    }
+
+    .boton2 {
+      background-color: #BF00FF;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+    }
+
+    .botonIgual2 {
+      background-color: #555555;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+
+    }
+    .botonDel2 {
+      background-color: #FF00FF;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+    }
+
+    .botonOper2 {
+      background-color: #6A0888;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      padding: 10px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-weight:bold;
+
+    }
+
+    body {
+      background-color: #E3CEF6;
+
+    }
+
+    #titulo {
+      font-weight:bold;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1 id="titulo">CALCULADORAS</h1>
+    <br><br>
+    <div class="row">
+      <div class="col-lg-3 col-lg-offset-4">
+        <p id="out1" class="in">0</p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton">7</button>
+          <button type="button" class="boton">8</button>
+          <button type="button" class="boton">9</button>
+          <button type="button" class="botonOper">/</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton">4</button>
+          <button type="button" class="boton">5</button>
+          <button type="button" class="boton">6</button>
+          <button type="button" class="botonOper">*</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton">1</button>
+          <button type="button" class="boton">2</button>
+          <button type="button" class="boton">3</button>
+          <button type="button" class="botonOper">-</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="botonDel">c</button>
+          <button type="button" class="boton">0</button>
+          <button type="button" class="botonIgual">=</button>
+          <button type="button" class="botonOper">+</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-3 col-lg-offset-4">
+        <p id="out2" class="in">0</p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton2">7</button>
+          <button type="button" class="boton2">8</button>
+          <button type="button" class="boton2">9</button>
+          <button type="button" class="botonOper2">/</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton2">4</button>
+          <button type="button" class="boton2">5</button>
+          <button type="button" class="boton2">6</button>
+          <button type="button" class="botonOper2">*</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="boton2">1</button>
+          <button type="button" class="boton2">2</button>
+          <button type="button" class="boton2">3</button>
+          <button type="button" class="botonOper2">-</button>
+      </div>
+    </div>
+    <br>
+    <div class="row text-center">
+      <div class="col-lg-3 col-lg-offset-4">
+          <button type="button" class="botonDel2">c</button>
+          <button type="button" class="boton2">0</button>
+          <button type="button" class="botonIgual2">=</button>
+          <button type="button" class="botonOper2">/</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    let calc = {
+      operando: 0,
+      num: 0,
+      operador: 0,
+    };
+    let calc2 = {
+      operando: 0,
+      num: 0,
+      operador: 0,
+    };
+    $(document).ready(function() {
+      $(".boton").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc);
+        $("#out1").text(out1);
+      });
+      $(".botonDel").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc);
+        $("#out1").text(out1);
+      });
+      $(".botonOper").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc);
+        $("#out1").text(out1);
+      });
+      $(".botonIgual").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc);
+        $("#out1").text(out1);
+      });
+
+      $(".boton2").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc2);
+        $("#out2").text(out1);
+      });
+      $(".botonDel2").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc2);
+        $("#out2").text(out1);
+      });
+      $(".botonOper2").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc2);
+        $("#out2").text(out1);
+      });
+      $(".botonIgual2").click(function() {
+        let v_text=$(this).text();
+        out1=getKey(v_text,calc2);
+        $("#out2").text(out1);
+      });
+
+    });
+  </script>
+</body>
+</html>

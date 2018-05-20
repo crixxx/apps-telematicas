@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Práctica 5.6. Geolocalización y mapas</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+  <style>
+    #id_mapa {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="id_mapa"></div>
+  <script>
+    'use strict'
+    $(document).ready(function() {
+      let latitud;
+      let longitud;
+      let precision;
+      let zoom = 16;
+
+      let options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+
+      function success(pos) {
+        let x = pos.coords;
+        let mi_mapa;
+
+        latitud = x.latitude;
+        longitud = x.longitude;
+        precision = x.accuracy;
+
+        mi_mapa = L.map('id_mapa').setView([latitud, longitud], zoom);
+        console.log("Latitud: ", latitud, "longitud: ", longitud);
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+        }).addTo(mi_mapa);
+
+        let coordenadas = [latitud, longitud];
+        let mi_marcador = L.marker(coordenadas).addTo(mi_mapa);
+        mi_marcador.bindPopup("Here I am!").openPopup();
+      }
+
+      function error(err) {
+        console.warn('ERROR(${err.code}): ${err.message}');
+      };
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    });
+  </script>
+
+</body>
+
+</html>

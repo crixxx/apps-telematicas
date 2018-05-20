@@ -1,0 +1,38 @@
+<!-- María Cristina López-Andújar Moreno User: mcristin-->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Practica 4.3. y 4.4. Modificacion de un boton + Tooltip </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+    <button id="boton" data-toggle="tooltip" title="Esto es un tooltip" data-placement="bottom" >Ver foto</button>
+    <div id="marco_foto" class="oculto">
+    <img id="fotoURJC" src="images/urjc.png" alt="Logo URJC">
+  </div>
+  <script>
+    $(document).ready(function() {
+      var estaOculto = true;
+      $("#boton").click(function() {
+        $("#marco_foto").toggleClass("oculto")
+        if (estaOculto === true){
+          $("#boton").text("Ocultar foto");
+          estaOculto = !estaOculto;
+        }else {
+          $("#boton").text("Ver foto");
+          estaOculto = !estaOculto;
+        }
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    });
+  </script>
+</body>
+</html>

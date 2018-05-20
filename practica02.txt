@@ -1,0 +1,236 @@
+Nombre: María Cristina López-Andújar Moreno
+login: mcristin
+
+==============================
+Práctica 2.1. Análisis de selectores
+==============================
+ - Ejemplo 1:
+Son tres parrafos:
+1. Este esta determinado como <p></p>
+2. Este es igual que el anterior, pero está metido en una clase para luego poder diferenciar cada parrafo y ponerle estilos distintos
+3. Este esta determinado como <div></div> la diferencia principal es que en un div se pueden meter varios <p></p>, mientras que <p></p> solo puede ser uno y
+a parte está dentro de una clase para poder aplicarle reglas css
+
+Luego tambien tiene un heading de tipo h1
+
+- Ejemplo 2:
+Son un parrafo normal con <p> y dos divs:
+1. El primer div tiene dentro  un parrafo
+2. Este div tiene dos parrafos normales con <p> y una seccion con un heading y otro parrafo.
+Sección: es como un div pero mas especifico, es como el indice de un libro
+
+
+- Ejemplo 3:
+Está dividido en dos divs:
+1. Uno de clase "pais españa"
+2. Otro de clase "pais estados-unidos"
+
+A su vez la clase pais españa esta dividido en otro div de clase "castilla-la-mancha" que a su vez
+es padre de otros tres divs de clases toledo, cuenca y albacete.
+
+El div de clase "pais estados-unidos" es padre de otro div de clase ohio y éste tiene otro div
+de clase toledo.
+
+Los parrafos de  clase españa y  toledo estan definidas con color de linea rojo.
+La clase toledo ademas también está definida con el color azul, esta regla no se aplica al parrafo 3 porque
+las reglas css se aplican siempre las mas restrictivas
+Los parrafos de clase toledo y cuenca ademas están alineados en el centro
+Y los parrafos pertenecientes a la clase castilla-la-mancha estarán subrrayados
+
+
+==============================
+Práctica 2.2. Análisis de selectores
+==============================
+En este ejemplo hay un div con tres parrafos, dos nomales y otro con el identificador alfa
+
+Fuera del div hay otro parrafo.
+
+En las reglas css los elementos con en el identificador alfa van de color azul.
+Los parrafos con identificador alfa saldran con tamaño 200%.
+Los divs con el identificador alfa estarán con el fondo amarillo, en este caso no hay ningun div con identificador alfa
+Todos los elementos dentro de un div con identificador alfa tienen el tipo de fuente italic.
+
+==============================
+Práctica 2.3. Análisis de selectores
+==============================
+El ejemplo 5, está compuesto de 5 parrafos tipo <p>
+Dos son de clase reglamento a parte de urjc y ucm, otros dos son de clase investigacion a parte de urjc y uc3m
+El otro es de clase matriculacion y el quinto parrafo es uno simple sin clases ni identificadores.
+
+Las clases css que aplican son a las clase urjc tienen la letra de color rojo
+Los parrafos que sean de clase reglamento y urjc irán subrrayados
+Las clases urjc y reglamento iran sombreadas con el color azul claro
+
+
+==============================
+Práctica 2.4. Análisis de selectores
+==============================
+El ejemplo 6, está compuesto de 4 parrafos
+Uno normal y otros tres de tipo compra, ventas y ventas y promociones.
+
+Las reglas css que aplican son:
+A todos los parrafos que sean de alguna clase le pone un marco de color verde --> Todos los parrafos
+Los parrafos de clase ventas iran en fuente italica --> Parrafo 2
+Los parrafos que tengan como clase al menos la clase ventas iran en letra xlarge--> Parrafos 3 y 4
+
+
+==========================
+Práctica 2.5. Uso de selectores
+==========================
+En el ejemplo 251 he utilizado el selector descendente que en el caso del parrafo 8,
+el texto siguiente como está contenido dentro de un span y dentro de un parrafo, le aplica la regla:
+
+  p span{
+      font-style: italic;
+    }
+Y selector de clase en el parrafo de la clase test, con la siguiente regla
+.test{
+      background-color: blue;
+    }
+
+En el ejemplo 252 he utilizado el identificador destacado para identificar el parrafo 4
+    <p id='destacado'>Párrafo 4</p>
+ al que le aplica la siguiente regla css:
+    #destacado { color: red; }
+
+Y la regla
+div#principal {
+      color: green;
+    }
+Que aplica a los div de clase principal:
+<div id="principal">
+    <p>Párrafo 2</p>
+  </div>
+
+En el ejemplo 253 he utilizado la regla:
+  .clase1.clase2 {
+      color: green;
+    }
+Para probar la concatenacion de clases y aplica al div:
+  <div class="clase1 clase2">
+    8. La clase concatenada
+  </div>
+
+Y la regla:
+ div + p {
+      text-decoration: underline;
+    }
+
+Que aplica al parrafo:
+  <div>
+    <p>Párrafo 2</p>
+  </div>
+ya que es un p dentro de un div
+
+Y la regla h2 + h3 {
+      color: white;
+      background-color: blue;
+    }
+Que aplica a
+<h2>La clase...</h2>
+  <h3>Adyacente</h3>
+
+En el ejemplo 254 he utilizado las siguientes reglas css:
+
+p[id] {
+        text-align: right;
+      }
+
+      p[class="fondo"]{
+        background-color: #C3DD1C;
+      }
+
+      p[class~="fondo"]{
+        font-size: 150%;
+      }
+De atributos de clase que aplican a los distintos ejemplos
+
+  <p class="fondo centrado">Ejemplo 1</p>
+    <br>
+    <div>Ejemplo 2<p class="fondo">Ejemplo 3</p></div>
+    <p id="derecha">Ejemplo 4<span> Ejemplo 5</span></p>
+    <h1 id="izquierda"> Ejemplo 6 </h1>
+    <div class="fondo">
+      <a> Ejemplo 7 </a>
+    </div>
+
+
+============================
+Práctica 2.6. Atributos del texto
+============================
+En este ejemplo he utilizado  de distintas formas de decoracion de texto con las siguientes reglas:
+  p {
+        text-align: justify;
+      }
+
+      .encabezado {
+        text-decoration: underline;
+        font-size: x-large;
+      }
+
+      .pequeña {
+        font-size: xx-small;
+      }
+
+      #cursiva {
+        font-style: oblique;
+      }
+
+      #tachado {
+        text-decoration: line-through;
+      }
+
+      p#centrado {
+        text-align: center;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .subrayado {
+        text-decoration: overline;
+      }
+
+      #izquierda {
+        text-align: left;
+      }
+
+================================
+Práctica 2.7. Atributos de los bordes
+================================
+En este ejemplo he creado 7 distintos tipos de bordes y a cada parrafo le he asignado un borde distinto:
+.borde1 {
+        border: 5px dotted;
+        border-color: #1CBDDD;
+      }
+
+      #borde2 {
+        border: 8px hidden;
+      }
+
+      #borde3 {
+        border: 5px dashed;
+        border-width: thick;
+      }
+
+      p#borde4 {
+        border: 8px double;
+        border-color: #F19759;
+      }
+
+      .borde5 {
+        border: 8px groove;
+        border-width: medium;
+      }
+
+      .borde6 {
+        border: 20px ridge;
+      }
+
+      #borde7 {
+        border: 10px outset;
+        border-color: #F15959;
+      }
+
+

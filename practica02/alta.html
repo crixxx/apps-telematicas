@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Práctica 2.13. Formularios Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form action="alta.html">
+      <fieldset>
+        <legend>
+          <h3>Datos personales</h3>
+        </legend>
+        <label for="usuario">Nombre: </label>
+        <input type="text" name="usuario" id="usuario">
+        <br><br>
+        <label for="apellidos">Apellidos: </label>
+        <input type="text" name="apellidos" id="apellidos">
+        <br><br>
+        <label for="fecha">Fecha de nacimiento</label>
+        <input type="date" name="fecha" id="fecha">
+        <br><br>
+        <label for="lugar">Lugar de nacimiento:</label>
+        <input type="text" name="lugar" id="lugar">
+        <br><br>
+        <label for="dni">Identificador</label>
+        <select name="dni" id="dni">
+            <option value="defecto">---</option>
+            <option value="nif">NIF</option>
+            <option value="dni">DNI</option>
+            <option value="tarjeta">Tarjeta de residencia</option>
+            <option value="otros">Otros</option>
+         </select>
+        <label for="numero">Numero</label>
+        <input type="text" name="numero" id="numero">
+        <br><br>
+      </fieldset>
+    </form>
+    <form action="/alta.html">
+      <fieldset>
+        <legend>
+          <h3>Datos del pagador</h3>
+        </legend>
+        <label for="tipotarjeta">Tipo de tarjeta</label>
+        <select name="tipotarjeta" id="tipotarjeta">
+               <option value="defecto" >---</option>
+               <option value="debito">Debito</option>
+               <option value="dredito">Credito</option>
+               <option value="mastercard">Mastercard</option>
+               <option value="visa">VISA</option>
+            </select>
+        <br>
+        <label for="nombretarjeta">Nombre titular</label>
+        <input type="text" name="kilometros" id="kilometros">
+        <br><br>
+        <label for="caducidad">Fecha de caducidad</label>
+        <select name="mes" id="mes">
+               <option value="defecto" >---</option>
+               <option value="enero">Enero</option>
+               <option value="febrero">Febrero</option>
+               <option value="marzo">Marzo</option>
+               <option value="abril">Abril</option>
+               <option value="mayo" >Mayo</option>
+               <option value="junio">Junio</option>
+               <option value="julio">Julio</option>
+               <option value="agosto">Agosto</option>
+               <option value="septiembre">Septiembre</option>
+               <option value="octubre" >Octubre</option>
+               <option value="noviembre">Noviembre</option>
+               <option value="diciembre">Diciembre</option>
+            </select>
+        <select name="anno" id="anno">
+               <option value="defecto" >---</option>
+               <option value="2018">2018</option>
+               <option value="2019">2019</option>
+               <option value="2020">2020</option>
+               <option value="2021">2021</option>
+               <option value="2022">2022</option>
+               <option value="2023">2023</option>
+               <option value="2024">2024</option>
+               <option value="2025">2025</option>
+            </select>
+        <br><br>
+        <label for="numerotarjeta">Numero de tarjeta</label>
+        <input type="number" name="numerotarjeta" id="numerotarjeta">
+        <br>
+      </fieldset>
+    </form>
+    <br>
+    <form action="/alta.html" class="form-inline">
+      <fieldset>
+        <legend>
+          <h3>Información adicional</h3>
+        </legend>
+        <textarea name="mensaje" rows="10" cols="30">Escriba más información...</textarea>
+        <br><br>
+        <label for="imagen">Añadir imágenes</label>
+        <input type="image" name="imagen" id="imagen" src="https://d30y9cdsu7xlg0.cloudfront.net/png/3927-200.png" alt="Imagen" width="20" height="20">
+        <br>
+      </fieldset>
+    </form>
+    <br>
+    <form action="/alta.html" class="form-inline">
+      <input type="checkbox" name="terminos" value="si">He leido los términos y condiciones<br>
+    </form>
+    <br>
+    <tr>
+      <td>
+        <div align="center">
+          <input type="submit" value="Enviar formulario">
+        </div>
+      </td>
+      <td>
+        <div align="center">
+          <input type="reset" value="Borrar formulario">
+        </div>
+      </td>
+    </tr>
+  </div>
+
+</body>
+
+</html>

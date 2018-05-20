@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <title>CV Maria Cristina Lopez-Andujar Moreno</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+  h1 {
+    color:#FFFFFF;
+    background-color:#000000;
+  }
+  dl {
+    color:#000000;
+    background-color: #FF0000;
+  }
+  .images{
+    text-align: right;
+  }
+  .personales {
+    color:#FFFFFF;
+    background-color: #848484;
+  }
+
+  body{
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .oculto {
+    display: none;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="personales">
+    <h1>Maria Cristina Lopez-Andujar Moreno</h1>
+    <img id="fotoPerfil" style="float: right;margin: 0px 30px 30px 0px" src="images/perfil.jpg" alt="foto" height="150" width="100">
+    <button id="botonFoto" data-placement="bottom" style="float: right;">Ocultar foto</button>
+    <br>Lugar de nacimiento: Madrid
+    <br>Fecha de nacimiento: 25/04/1991
+    <br>Domicilio: Calle Dinamarca 3, 6ºC, Fuenlabrada (MADRID)
+    <br>CP: 28942
+    <br>Telefono: 638874059
+    <br>DNI: 49095833-X
+    <br>Email: m.cristinalopezandujar.m@gmail.com
+  </div>
+
+  <div>
+    <h1>FORMACIÓN</h1>
+
+    <dl>
+      <dt>2012-2018</dt>
+      <dd>Grado en Ingeniería Telematica</dd>
+      <dd>Universidad Rey Juan Carlos, Fuenlabrada</dd>
+      <img style="float: right;margin: 0px 300px 0px 0px" src="images/urjc.png" alt="logo" class="images" height="143" width="325">
+      <dt>2008</dt>
+      <dd>Titulo de Socorrismo acuático y salvamento</dd>
+      <dd>Federación Española de Salvamento y Socorrismo, Madrid</dd>
+      <dt>2003-2007</dt>
+      <dd>Graduado escolar</dd>
+      <dd>Instituto Federica Monstseny, Fuenlabrada</dd>
+      <dt>2007-2009</dt>
+      <dd>Bachillerato de Ingeniería y tecnología</dd>
+      <dd>Instituto Jovellanos, Fuenlabrada</dd>
+    </dl>
+
+    <dl>
+      <dt>Idiomas:</dt>
+      <dd>Inglés: C1</dd>
+      <dd>Español: Nativo</dd>
+      <dd>Alemán: B2</dd>
+    </dl>
+
+  </div>
+
+  <div>
+    <h1>EXPERIENCIA LABORAL</h1>
+    <button id="botonExperiencia" data-placement="bottom">Ocultar contenido</button>
+  </div>
+  <div id="experiencia">
+    <dl>
+      <dt><ul><li>28/02/2017–Actualmente</li></ul></dt>
+      <dd>
+        <ul>
+          <li>Beca de práticas en Accenture</li>
+          <li>Actividades desarrolladas: Pruebas integradas, testing y administración de sistemas</li>
+        </ul>
+      </dd>
+    </dl>
+    <dl>
+      <dt><ul><li>01/06/2010–01/06/2013</li></ul></dt>
+      <dd>
+        <ul>
+          <li>Atención y logística en Ikea Ibérica SA</li>
+          <li>Actividades desarrolladas: Atención al cliente, gestión de incidencias y entrega de mercancías</li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+
+  <div>
+    <h1>CONOCIMIENTOS</h1>
+    <button id="botonConocimientos" data-placement="bottom">Ocultar contenido</button>
+  </div>
+  <div id="conocimientos">
+    <dl>
+      <dt><ul><li>Lenguajes de programación:</li></ul></dt>
+      <dd>
+        <ul>
+          <li>C,C++, Ada, Python, Java, Matlab, Shell, Javascript, Go, XML, HTML, Android.</li>
+        </ul>
+      </dd>
+      <dt><ul><li>Otros:</li></ul></dt>
+      <dd>
+        <ul>
+          <li>Linux, Windows, Red Hat</li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      var estaOculto = true;
+      $("#botonConocimientos").click(function() {
+        $("#conocimientos").toggleClass("oculto")
+        if (estaOculto === true){
+          $("#botonConocimientos").text("Ver contenido");
+          estaOculto = !estaOculto;
+        } else {
+          $("#botonConocimientos").text("Ocultar contenido");
+          estaOculto = !estaOculto;
+        }
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      var estaOculto = true;
+      $("#botonExperiencia").click(function() {
+        $("#experiencia").toggleClass("oculto")
+        if (estaOculto === true){
+          $("#botonExperiencia").text("Ver contenido");
+          estaOculto = !estaOculto;
+        } else {
+          $("#botonExperiencia").text("Ocultar contenido");
+          estaOculto = !estaOculto;
+        }
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      var estaOculto = true;
+      $("#botonFoto").click(function() {
+        $("#fotoPerfil").toggleClass("oculto")
+        if (estaOculto === true){
+          $("#botonFoto").text("Ver foto");
+          estaOculto = !estaOculto;
+        } else {
+          $("#botonFoto").text("Ocultar foto");
+          estaOculto = !estaOculto;
+        }
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
